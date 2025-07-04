@@ -1,0 +1,8 @@
+langchain
+openai
+streamlit
+pandas
+yfinance
+matplotlib
+ta
+python-dotenv
