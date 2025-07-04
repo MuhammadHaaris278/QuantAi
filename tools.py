@@ -4,12 +4,18 @@ from langchain.tools import Tool
 from strategy_engine import run_strategy_with_prompt
 from realtime_fetcher import fetch_coingecko_prices
 from live_signal_engine import signal_tool
+import time
 
 # Backtest Tool — now dynamically handles ETH or BTC
 
 
 def run_backtest_tool(prompt: str) -> str:
-    return run_strategy_with_prompt(prompt)
+    start_time = time.time()
+    result = run_strategy_with_prompt(prompt)
+    end_time = time.time()
+    duration = end_time - start_time
+    print(f"Backtest execution time: {duration:.2f} seconds")  # Log the execution time
+    return result
 
 # Live Price Tool
 
